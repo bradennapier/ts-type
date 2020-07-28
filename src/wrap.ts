@@ -33,16 +33,16 @@ export const schema = wrap(validator);
 
 export type Inferred = Infer<typeof schema>;
 
-// const obj: Inferred = {
-//   foo: 'one',
-//   bar: 'bar',
-//   baz: 123,
-//   qux: 'qux',
-//   blah: 3,
-//   union: 2,
-//   intersect: {
-//     one: 'hi',
-//     four: 3,
-//     two: 2,
-//   },
-// };
+const obj: Inferred = {
+  foo: 'one',
+  bar: 'bar',
+  baz: 123,
+  qux: 'qux',
+  blah: 3,
+  union: 2,
+  intersect: {
+    one: 'hi',
+    four: 3,
+    two: 2,
+  },
+};
