@@ -22,6 +22,7 @@ const validator = {
   bar: wrap.nullable.optional.literal('bar'),
   baz: 123,
   qux: 'qux',
+  // TODO wrap.not.equal(2) - not working for all values
   blah: wrap.unequal(2),
   union: wrap.optional.nullable.union([wrap.string(), wrap.number()]),
   intersect: wrap.intersection([one, two]),
