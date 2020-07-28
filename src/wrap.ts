@@ -17,7 +17,7 @@ export const wrap = createRootProxy(typed);
 const one = { one: wrap.optional.string(), four: 3 } as const;
 const two = { two: 2 } as const;
 const three = {
-  five: { foo: wrap.optional.string(), bar: 'bar', one },
+  five: { foo: wrap.optional.string(), bar: 'bar', one, ...two },
 } as const;
 
 const validator = {
@@ -52,6 +52,7 @@ const obj: Inferred = {
     two: 2,
     five: {
       bar: 'bar',
+      two: 2,
       one: {
         one: 'string',
         four: 3,
