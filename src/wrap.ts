@@ -23,7 +23,8 @@ const validator = {
   baz: 123,
   qux: 'qux',
   // TODO wrap.not.equal(2) - not working for all values, confirmed typing can work in
-  // some cases even
+  // some cases even for example wrap.primitive.not.equal.string.number was typable to all
+  // primitives but string | number
   blah: wrap.unequal(2),
   union: wrap.optional.nullable.union([wrap.string(), wrap.number()]),
   intersect: wrap.intersection([one, two]),
