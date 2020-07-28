@@ -1,0 +1,37 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.suggest.includeAutomaticOptionalChainCompletions": true,
+  // Enable/disable default JavaScript formatter (For Prettier)
+  "editor.formatOnSave": false,
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    ".babelrc": "json5",
+    ".prettierrc": "json5",
+    ".sequelizerc": "javascript"
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json5]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    // Right Click --> Format Document is proper formatter
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "npm.packageManager": "yarn",
+  "npm.bin": "yarn",
+  "search.exclude": {
+    "**/dist/**": true
+  }
+}
