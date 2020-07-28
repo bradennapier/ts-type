@@ -12,6 +12,7 @@
     "esModuleInterop": true,
     "importHelpers": true,
     "removeComments": false,
+    "noErrorTruncation": true,
     "paths": {
       "*": ["*"]
     },

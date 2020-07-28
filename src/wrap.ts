@@ -69,3 +69,7 @@ const picked = {
 export const pickedSchema = wrap(picked);
 
 export type PickedInferred = Infer<typeof pickedSchema>;
+
+const merged = wrap(wrap.merge([schema, pickedSchema]));
+
+type MergeInferred = Infer<typeof merged>;

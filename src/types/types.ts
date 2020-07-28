@@ -57,6 +57,13 @@ type TypedPrototype<T extends AnyObj> = Readonly<{
     [K2 in K[number]]: V[K2];
   };
 
+  merge<
+    S extends Typed<any>[],
+    V extends S extends Typed<infer U>[] ? U : never
+  >(
+    schema: S,
+  ): ResolvedWritableDeep<IntersectionOf<V>>;
+
   optional: TypedPrototype<T & { readonly __optional: typeof OPTIONAL }>;
   nullable: TypedPrototype<T & { readonly __nullable: typeof NULLABLE }>;
 
