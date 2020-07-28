@@ -16,6 +16,7 @@ export const wrap = createRootProxy(typed);
 
 const one = { one: wrap.optional.string(), four: 3 } as const;
 const two = { two: 2 } as const;
+const three = { five: { foo: wrap.optional.string(), bar: 'bar' } } as const;
 
 const validator = {
   foo: wrap.optional.string(),
@@ -27,7 +28,7 @@ const validator = {
   // primitives but string | number
   blah: wrap.unequal(2),
   union: wrap.optional.nullable.union([wrap.string(), wrap.number()]),
-  intersect: wrap.intersection([one, two]),
+  intersect: wrap.intersection([one, two, three]),
   key: wrap.never(),
   undef: wrap.undefined(),
 } as const;
@@ -47,5 +48,8 @@ const obj: Inferred = {
     one: 'hi',
     four: 3,
     two: 2,
+    five: {
+      bar: 'bar',
+    },
   },
 };
