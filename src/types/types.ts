@@ -59,6 +59,8 @@ type TypedPrototype<T extends AnyObj> = Readonly<{
 
   merge<
     S extends Typed<any>[],
+    // could enhance with an `Overwrite` type, but to keep allowing any number
+    // of values to do this with would want 4.0's variadic tuples feature
     V extends S extends Typed<infer U>[] ? U : never
   >(
     schema: S,
