@@ -46,6 +46,17 @@ type TypedPrototype<T extends AnyObj> = Readonly<{
     arr: A,
   ): CheckFlags<T, IntersectionOf<A[number]>>;
 
+  pick<
+    S extends Typed<any>,
+    V extends S extends Typed<infer U> ? U : never,
+    K extends Array<keyof V>
+  >(
+    schema: S,
+    props: K,
+  ): {
+    [K2 in K[number]]: V[K2];
+  };
+
   optional: TypedPrototype<T & { readonly __optional: typeof OPTIONAL }>;
   nullable: TypedPrototype<T & { readonly __nullable: typeof NULLABLE }>;
 

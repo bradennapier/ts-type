@@ -16,7 +16,9 @@ export const wrap = createRootProxy(typed);
 
 const one = { one: wrap.optional.string(), four: 3 } as const;
 const two = { two: 2 } as const;
-const three = { five: { foo: wrap.optional.string(), bar: 'bar' } } as const;
+const three = {
+  five: { foo: wrap.optional.string(), bar: 'bar', one },
+} as const;
 
 const validator = {
   foo: wrap.optional.string(),
@@ -50,6 +52,20 @@ const obj: Inferred = {
     two: 2,
     five: {
       bar: 'bar',
+      one: {
+        one: 'string',
+        four: 3,
+      },
     },
   },
 };
+
+// example of a pick fn
+const picked = {
+  foo: wrap.string(),
+  obj: wrap.pick(schema, ['intersect', 'union']),
+} as const;
+
+export const pickedSchema = wrap(picked);
+
+export type PickedInferred = Infer<typeof pickedSchema>;
