@@ -39,7 +39,9 @@ type CheckFlags<T extends AnyObj, V> = V extends infer O
 type TypedPrototype<T extends AnyObj> = Readonly<{
   validate(value: unknown): value is ResolvedWritableDeep<T>;
   guard(value: unknown): value is ResolvedWritableDeep<T>;
-  union<V extends unknown[]>(arr: V): CheckFlags<T, V[number]>;
+  union<V extends unknown[] | readonly unknown[]>(
+    arr: V,
+  ): CheckFlags<T, V[number]>;
   intersection<A extends unknown[] | readonly unknown[]>(
     arr: A,
   ): CheckFlags<T, IntersectionOf<A[number]>>;
