@@ -80,7 +80,7 @@ type TypedPrototype<T extends AnyObj> = Readonly<{
 
   literal<V>(value: V): CheckFlags<T, V>;
   equal<V>(value: V): V;
-  unequal<R, V = unknown>(value: V | R): R;
+  unequal<R, V = unknown>(value: V): R;
 }>;
 
 export type Typed<T> = TypedPrototype<T> & symbol;
