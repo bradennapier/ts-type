@@ -22,12 +22,6 @@ export type ResolvedWritableDeep<T> = T extends { [key: string]: any }
     : never
   : T;
 
-export type $Debug<T> = T extends { [key: string]: any }
-  ? T extends infer O
-    ? { [K in keyof O]: $Debug<O[K]> }
-    : never
-  : T;
-
 export type MakeOptional<T extends AnyObj, K extends keyof T = keyof T> = Omit<
   T,
   K
