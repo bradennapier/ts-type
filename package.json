@@ -37,7 +37,7 @@
     "prettier-plugin-organize-imports": "^1.1.1",
     "prettier-plugin-package": "^1.0.0",
     "pretty-quick": "^2.0.1",
-    "semantic-release": "^17.1.1",
+    "semantic-release": "^19.0.3",
     "ts-node-dev": "^1.0.0-pre.56",
     "tsconfig-paths": "^3.9.0",
     "ttypescript": "^1.5.10",
